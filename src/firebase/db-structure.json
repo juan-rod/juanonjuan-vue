@@ -1,0 +1,23 @@
+{
+  "resources": {
+    "resource_id" : {
+      "title": "CSS Selectors",
+      "link": "https://flaviocopes.com/css-selectors/",
+      "tags": [ "week1", "css" ],
+      "createdBy": "user_id_1",
+      "createdOn": "date",
+      "updatedOn": "date"
+    }
+  },
+  "terminalTips": {
+    "terminal_tip_id": {
+      "createdBy": "user_id_1",
+      "createdOn": "date",
+      "updatedOn": "date",
+      "img": "link_to_storage",
+      "title": "title",
+      "text": "text",
+      "tags": []
+    }
+  }
+}

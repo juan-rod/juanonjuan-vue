@@ -1,0 +1,62 @@
+.main-container {
+  width: 100%;
+  padding-top: 3.5em;
+  header {
+    // border: 1px solid blue;
+    margin-bottom: 2em;
+    h1 {
+      @extend %txt--title;
+      margin-bottom: 0.2em;
+      span{
+        color: cc(hover);
+      }
+    }
+    p {
+      @include fluid-type(14px, 16px);
+      a {
+        &:hover {
+          color: cc(hover);
+        }
+      }
+    }
+  }
+  section {
+    // border: 1px solid green;
+    margin-bottom: 3em;
+    h2 {
+      @extend %txt--heading;
+      color: cc(alttxt, .35);
+    }
+    ul li {
+      margin: .4em 0;
+      @include fluid-type(18px, 22px);
+      text-transform: uppercase;
+      letter-spacing: -.9px;
+    }
+  }
+  footer {
+    margin: 10em 0 0;
+    @include flexColumnCenter;
+    p:nth-of-type(1) {
+      margin-bottom: 1em;
+      @include fluid-type(14px, 16px);
+      a {
+        color: cc(hover);
+        transition: color 500ms cb();
+        &:hover {
+          color: cc(alttxt);
+        }
+        &:active{
+          color: cc(link-active);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .main-container {
+    width: 75%;
+    min-width: 500px;
+    max-width: 800px;
+  }
+}

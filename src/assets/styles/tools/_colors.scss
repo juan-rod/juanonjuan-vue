@@ -1,0 +1,44 @@
+// colors
+$ghost-white: #fcfdff;
+$a-gray: rgba(221,225,218,1);
+$a-red:rgba(214,32,52,1);
+$a-pink:rgba(222,178,182,1);
+$a-green:rgba(58,98,82,1);
+$a-black:rgba(24,26,27,1);
+$light-gray-blue: #dae4eb;
+$dark-gray-blue: #58585b;
+$smoky-black: #4c4e4d;
+$projector-blue: #0433BF;
+$a-nother-red:#f2514b;
+$a-beige:#eca27e;
+$a-deep-red:#7b0d08;
+$a-nother-green:#b0a976;
+
+$white-text: rgba(220, 220, 220, 1);
+$black-text:rgba(24, 26, 27, 1);
+$black-bg: rgba(29, 31, 33, 1);
+$smoky-black: #4c4e4d;
+$link-hover:#0B9ED9;
+$link-active:#F25CA2;
+// cc map
+$colors:(
+  default:(
+    bg: $black-bg,
+    txt: $smoky-black,
+    alttxt: $white-text,
+    hover: $link-hover,
+    link-active: $link-active,
+    selection: rgba($projector-blue, 1),
+    ghost: $ghost-white
+  )
+
+  // alt:(
+  //   txt: $dark-gray-blue,
+  //   bg: $a-gray,
+  //   border: $dark-gray-blue
+  // )
+
+  // inv:(
+  //   txt: $ghost-white
+  // )
+);

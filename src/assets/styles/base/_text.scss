@@ -1,0 +1,35 @@
+//google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:500|Space+Mono:700&display=swap');
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Space Mono', monospace; */
+
+// font stack
+@mixin font-stack($ff, $weight: normal) {
+  font-family: #{$ff}, Helvetica, Arial, sans-serif, monospace;
+  font-weight: $weight;
+}
+
+// font families
+%ff__Roboto--400 { @include font-stack('Roboto', 400) }
+%ff__SpaceMono--700 { @include font-stack('Space Mono', 700) }
+
+
+// extend placeholders
+%txt--body {
+    @extend %ff__Roboto--400;
+    // font-size: 1rem;
+}
+%txt--title {
+    @extend %ff__SpaceMono--700;
+    // font-size: 3.2rem;
+    line-height: 1.2;
+    text-transform: lowercase;
+}
+
+%txt--heading {
+    @extend %ff__SpaceMono--700;
+    line-height: 1.5;
+}
+
+  
+

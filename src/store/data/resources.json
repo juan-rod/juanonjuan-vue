@@ -1,0 +1,184 @@
+{
+  "resources" : [
+    {
+      "title": "CSS Selectors",
+      "link": "https://flaviocopes.com/css-selectors/",
+      "tags": [ "week1", "css" ]
+    },
+    {
+      "title": "CSS Specificity",
+      "link": "https://flaviocopes.com/css-specificity/",
+      "tags": [ "week1", "css" ]
+    },
+    {
+      "title": "Child and Sibling Selectors",
+      "link": "https://css-tricks.com/child-and-sibling-selectors/",
+      "tags": [ "week1", "css" ]
+    },
+    {
+      "title": "how css selectors work",
+      "link": "https://css-tricks.com/how-css-selectors-work/",
+      "tags": [ "week1", "css" ]
+    },
+    {
+      "title": "CSS rules to live by",
+      "link": "https://www.freecodecamp.org/news/css-rules-to-live-by-962a051e1eb2/",
+      "tags": [ "week1", "css" ]
+    },
+    {
+      "title": "BROWSER DEFAULT STYLES",
+      "link": "https://browserdefaultstyles.com/",
+      "tags": [ "week1", "css", "html", "browser" ]
+    },
+    {
+      "title": "why how and when to use semantic html and aria",
+      "link": "https://css-tricks.com/why-how-and-when-to-use-semantic-html-and-aria",
+      "tags": [ "week1", "css", "html" ]
+    },
+    {
+      "title": "web design for beginners",
+      "link": "https://webflow.com/blog/web-design-for-beginners",
+      "tags": [ "week2", "design" ]
+    },
+    {
+      "title": "layout design",
+      "link": "https://wpamelia.com/layout-design/",
+      "tags": [ "week2", "design" ]
+    },
+    {
+      "title": "web design basics guide",
+      "link": "https://99designs.com/blog/tips/web-design-basics-guide/",
+      "tags": [ "week2", "design" ]
+    },
+    {
+      "title": "12 dos donts web design",
+      "link": "https://xd.adobe.com/ideas/principles/web-design/12-dos-donts-web-design-2/",
+      "tags": [ "week2", "design" ]
+    },
+    {
+      "title": "css media queries",
+      "link": "https://flaviocopes.com/css-media-queries/",
+      "tags": [ "week2", "media-queries" ]
+    },
+    {
+      "title": "introduction to responsive web design pseudo elements media queries",
+      "link": "https://www.toptal.com/responsive-web/introduction-to-responsive-web-design-pseudo-elements-media-queries",
+      "tags": [ "week2", "media-queries" ]
+    },
+    {
+      "title": "beginners guide to mobile web development",
+      "link": "https://medium.com/beginners-guide-to-mobile-web-development/media-queries-54a1a463356f",
+      "tags": [ "week2", "media-queries" ]
+    },
+    {
+      "title": "ultimate flexbox cheatsheet",
+      "link": "https://www.sketchingwithcss.com/samplechapter/cheatsheet.html",
+      "tags": [ "week3", "css", "flex", "layouts"]
+    },
+    {
+      "title": "creating a sticky footer with flexbox",
+      "link": "https://www.gomasuga.com/blog/creating-a-sticky-footer-with-flexbox",
+      "tags": [ "week3", "css", "flex", "layouts"]
+    },
+    {
+      "title": "how to build a responsive navigation bar with flexbox",
+      "link": "https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-navigation-bar-with-flexbox--cms-33535",
+      "tags": [ "week3", "css", "flex", "layouts"]
+    },
+    {
+      "title": "css grid starter layouts",
+      "link": "https://css-tricks.com/snippets/css/css-grid-starter-layouts/",
+      "tags": [ "week3", "css", "grid", "layouts"]
+    },
+    {
+      "title": "flexible sized grids with auto fill and minmax",
+      "link": "https://rachelandrew.co.uk/archives/2016/04/12/flexible-sized-grids-with-auto-fill-and-minmax/",
+      "tags": [ "week3", "css", "grid", "layouts"]
+    },
+    {
+      "title": "grid by example",
+      "link": "https://gridbyexample.com/examples/",
+      "tags": [ "week3", "css", "grid", "layouts"]
+    },
+    {
+      "title": "css grid demos on codepen",
+      "link": "https://codepen.io/collection/XRRJGq/",
+      "tags": [ "week3", "css", "grid", "codepen"]
+    },
+    {
+      "title": "flexible data tables with css grid",
+      "link": "https://adamlynch.com/flexible-data-tables-with-css-grid",
+      "tags": [ "week3", "css", "grid"]
+    },
+    {
+      "title": "Digging Into The Display Property",
+      "link": "https://www.smashingmagazine.com/2019/04/display-two-value/",
+      "tags": [ "week3", "css", "grid", "display", "flex"]
+    },
+    {
+      "title": "10x your productivity by creating a process",
+      "link": "https://www.freecodecamp.org/news/10x-your-productivity-by-creating-a-process/",
+      "tags": [ "productivity" ]
+    },
+    {
+      "title": "how to go from hobbyist to professional developer",
+      "link": "https://www.freecodecamp.org/news/how-to-go-from-hobbyist-to-professional-developer-11a8b8a52b5f/",
+      "tags": [ "self-improvement" ]
+    },
+    {
+      "title": "google fonts",
+      "link": "https://fonts.google.com/",
+      "tags": [ "fonts", "css" ]
+    },
+    {
+      "title": "1 page cheatsheet the power of habit by charles duhigg",
+      "link": "http://www.kevinhabits.com/1-page-cheatsheet-the-power-of-habit-by-charles-duhigg-2/",
+      "tags": [ "habits", "self-improvement", "productivity" ]
+    },
+    {
+      "title": "flowchart for changing habits",
+      "link": "https://charlesduhigg.com/flowchart-for-changing-habits/",
+      "tags": [ "habits", "self-improvement", "productivity" ]
+    },
+    {
+      "title": "css battle",
+      "link": "https://cssbattle.dev/",
+      "tags": [ "css", "practice" ]
+    },
+    {
+      "title": "Color Themes",
+      "link": "https://color.adobe.com/explore",
+      "tags": [ "css", "color" ]
+    },
+    {
+      "title": "Cool Backgrounds",
+      "link": "https://coolbackgrounds.io/",
+      "tags": [ "css", "color", "backgrounds" ]
+    },
+    {
+      "title": "Gradient Lab",
+      "link": "https://gradientlab.space/",
+      "tags": [ "css", "color", "backgrounds", "gradients"]
+    },
+    {
+      "title": "CSS Gradient",
+      "link": "https://cssgradient.io/",
+      "tags": [ "css", "color", "backgrounds", "gradients"]
+    },
+    {
+      "title": "Color Hunt",
+      "link": "https://colorhunt.co/",
+      "tags": [ "css", "color", "backgrounds", "themes"]
+    },
+    {
+      "title": "SVG Backgrounds",
+      "link": "https://www.svgbackgrounds.com/",
+      "tags": [ "css", "color", "backgrounds", "svg"]
+    },
+    {
+      "title": "Color Wise",
+      "link": "https://colorwise.io/",
+      "tags": [ "css", "color", "themes"]
+    }
+  ]
+}

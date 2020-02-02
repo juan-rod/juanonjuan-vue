@@ -1,0 +1,32 @@
+body {
+  @extend %txt--body;
+  color: cc(alttxt) ;
+  background-color: cc(bg) ;
+  padding: 1.3em;
+  @include flexColumnCenter;
+  a {
+    color: cc(alttxt);
+    transition: color 500ms cb();
+    &:hover {
+      color: cc(hover);
+    }
+    &:active{
+      color: cc(link-active);
+    }
+  }
+  ::selection {
+    background-color: cc(selection);
+  }
+  h1{
+      @include fluid-type(32px, 42px);
+  }
+  h2{
+      @include fluid-type(24px, 32px);
+  }
+  h3{
+      @include fluid-type(18px, 20px);
+  }
+  p {
+      @include fluid-type(14px, 16px);
+  }
+}  
