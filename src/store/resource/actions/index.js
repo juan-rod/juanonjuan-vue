@@ -11,6 +11,14 @@ function getMenuItems (commit, doc) {
       })
     })
 }
+function setResourceTags (commit, getters, doc) {
+  // let rTags = getters.resourceTags
+  // rTags = Array.from(new Set(rTags))
+
+  // let flattened = tags.reduce(flattenTagsList, [])
+  // console.log('flattened', flattened)
+  commit(`${[Mutation.SET_RESOURCE_TAGS]}`, doc.tags)
+}
 
 export default {
   async [Action.CREATE_NEW_RESOURCE] ({commit, dispatch}, resourceItem) {
@@ -23,11 +31,14 @@ export default {
     commit(`${[Mutation.SET_NEW_RESOURCE]}`, resource)
     dispatch(`${Action.GET_RESOURCES}`)
   },
-  async [Action.GET_RESOURCES] ({commit}) {
+  async [Action.GET_RESOURCES] ({commit, getters}) {
     ResourcesCollection
       .get()
       .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => commit(`${[Mutation.SET_NEW_RESOURCE]}`, doc.data()))
+      querySnapshot.forEach((doc) => {
+        commit(`${[Mutation.SET_NEW_RESOURCE]}`, doc.data())
+        setResourceTags (commit, getters, doc.data())
+      })
     })
   },
   async [Action.GET_RESOURCES_BY] ({commit}, resourceBy) {

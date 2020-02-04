@@ -8,11 +8,6 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'resource-list',
-  props: {
-    resources: {
-      type: Array
-    }
-  },
   data () {
     return {}
   },

@@ -5,6 +5,7 @@ export const Action = {
 }
 export const Mutation = {
   SET_NEW_RESOURCE: "SET_NEW_RESOURCE",
+  SET_RESOURCE_TAGS: "SET_RESOURCE_TAGS",
   SET_ERROR: "SET_ERROR",
   CLEAR_ERROR: "CLEAR_ERROR"
 }

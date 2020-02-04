@@ -2,8 +2,10 @@ import { Mutation } from "../types";
 
 export default {
   [Mutation.SET_NEW_RESOURCE](state, payload) {
-    console.log('Mutation.SET_NEW_RESOURCE] payload', payload)
     state.resources.push(payload)
+  },
+  [Mutation.SET_RESOURCE_TAGS](state, payload) {
+    state.resourceTags.push(payload)
   },
   [Mutation.SET_ERROR](state, payload) {
     state.error = payload
