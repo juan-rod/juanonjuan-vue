@@ -2,7 +2,7 @@
   <div class="tags-container">
     <div class="tag-item" v-for="(tag, index) in tagItems" @click="filterByTag(tag)" :key="index">
       <p>{{ tag }}</p>
-      <span> {{getTagSize(tag)}}</span>
+      <!-- <span> {{getTagSize(tag)}}</span> -->
     </div>
   </div>
 </template>
@@ -16,6 +16,9 @@ export default {
     return {
     }
   },
+  mounted () {
+    // this.setFilterResources
+  },
   computed: {
     ...mapGetters('resource',['resourceTags']),
     tagItems () {
@@ -26,6 +29,9 @@ export default {
     }
   },
   methods: {
+    setFilterResources () {
+      this.$store.commit(`resource/${Mutation.SET_FILTERED_RESOURCES}`)
+    },
     getTagSize (tag) {
       return this.tagSize[tag].length
     },
@@ -36,6 +42,7 @@ export default {
     filterByTag (tag) {
       console.log('filterByTag', tag)
       this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, tag)
+      this.$store.commit(`resource/${Mutation.FILTERED_RESOURCES}`)
     }
   }
 }

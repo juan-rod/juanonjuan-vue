@@ -6,10 +6,12 @@ export default {
     state.resources.push(payload)
   },
   [Mutation.SET_RESOURCE_TAGS](state, payload) {
-    console.log('SET_RESOURCE_TAGS payload', payload)
+    // console.log('SET_RESOURCE_TAGS payload', state.resourceTags, payload)
     state.resourceTags.push(payload)
   },
-  [Mutation.SET_FILTERED_RESOURCES](state, resources) {
+  [Mutation.SET_FILTERED_RESOURCES](state) {
+    const resources = [...state.resources]
+    console.log('[Mutation.SET_FILTERED_RESOURCES]: resources', resources)
     state.filteredResources = resources
   },
   [Mutation.SET_FILTER_BY_TAG](state, tag) {
@@ -21,10 +23,13 @@ export default {
     state.filterResourcesBy.search = searchQuery
   },
   [Mutation.FILTERED_RESOURCES](state) {
-    console.log('[Mutation.FILTERED_RESOURCES]')
     const resources = [...state.resources]
+    console.log('[Mutation.FILTERED_RESOURCES]: resources', resources)
+    console.log('[Mutation.FILTERED_RESOURCES]: state.filteredResources', state.filteredResources)
     state.filteredResources = resources
-    state.filteredResources = Filters.filterResources(state.filterResourcesBy, resources)
+    let testFilters = Filters.filterResources(state.filterResourcesBy, resources)
+    console.log('testFilters', testFilters)
+    state.filteredResources = testFilters
   },
   [Mutation.SET_ERROR](state, payload) {
     state.error = payload

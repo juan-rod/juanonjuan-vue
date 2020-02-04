@@ -3,6 +3,10 @@
     <!-- <h2 v-if="filterResourcesBy"></h2> -->
     <ul>
       <li class="resource-list-item" v-for="(item, index) in filteredResources" :key="index">
+        {{item}}
+        <div v-for="(stuff, index) in item" :key="index" style="background:red;">
+          {{index}} {{stuff}}
+        </div>
         {{index}}
         <a :href="item.link">{{item.title}}</a>
       </li>
@@ -12,6 +16,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { Mutation } from '@/store/resource/types'
 export default {
   name: 'resource-list',
   //  props: {
@@ -23,18 +28,21 @@ export default {
     return {
     }
   },
+  watch: {
+    filteredResources(newVal, oldVal) {
+      console.log('WATCH newVal', newVal)
+      console.log('WATCH oldVal', oldVal)
+      if (newVal !== oldVal) {
+        console.log('this.$store.state', this.$store.state.resources.filteredResources)
+        // this.filteredResources = newVal
+      }
+    }
+  },
+  mounted () {
+    this.$store.commit(`resource/${Mutation.SET_FILTERED_RESOURCES}`)
+  },
   computed: {
-    ...mapGetters('resource',['resources', 'filterResourcesBy']),
-    filteredResources () {
-      const resourceTagSelected = this.filterResourcesBy.length > 0
-      console.log('resourceTagSelected', resourceTagSelected)
-      let newnew = resourceTagSelected
-        ? this.filterResourcesBySelectedTags
-        : this.resources
-        console.log('newnew', newnew)
-        console.log('newnew[filterResourcesBy]', newnew[this.filterResourcesBy])
-      return newnew
-    },
+    ...mapGetters('resource',['resources', 'filterResourcesBy', 'filteredResources']),
     filterResourcesBySelectedTags () {
       return this.groupBy(this.filterResourcesBy, this.resources)
     }
