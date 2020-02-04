@@ -1,4 +1,8 @@
 .tags-container {
   border: 1px solid blue;
   height: auto;
+  .tag-item {
+    border: 1px solid pink;
+    padding: 1em;
+  }
 }

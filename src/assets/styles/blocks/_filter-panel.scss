@@ -1,36 +1,7 @@
 .filter-panel {
   border: 2px solid white;
-  position: absolute;
   height: 100%;
   width: 200px;
-  left: 0;
   background-color: cc(bg);
-  i.fa-filter {
-    position: absolute;
-    font-size: 2em;
-    opacity: .2;
-    right: -1em;
-    transition: opacity 550ms cb();
-    &:hover {
-      opacity: 1;
-    }
-  }
-  &-nav {
-    border: 3px solid pink;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    padding: 2em;
-    // top: 2em;
-    // left: -200px;
-    input {
-      text-transform: uppercase;
-      color: cc(ghost);
-      font-size: 2em;
-      // height: 3em;
-      // width: auto;
-      width: 100%;
-      background: cc(bg);
-    }
-  }
+  padding: 3em 1em 1em;
 }

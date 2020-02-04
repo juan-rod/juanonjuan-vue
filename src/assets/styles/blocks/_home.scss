@@ -1,7 +1,35 @@
 .home {
   height: 100%;
-  @include flexRowCenter;
+  @include flexRow;
   align-items: flex-start;
+  justify-content: space-around;
+  position: relative;
+  padding-top: 3.5em;
+
+  i.fa-filter {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    font-size: 2em;
+    opacity: .15;
+    background: cc(bg);
+    border-radius: 50%;
+    z-index: 1;
+    transition: opacity 550ms cb();
+    &.active {
+      opacity: 1;
+    }
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
   footer {
     position: fixed;
     bottom: 1.3em;
@@ -27,7 +55,6 @@
 
 .main-container {
   width: 100%;
-  padding-top: 3.5em;
   header {
     // border: 1px solid blue;
     margin-bottom: 2em;
@@ -45,20 +72,6 @@
           color: cc(hover);
         }
       }
-    }
-  }
-  section {
-    // border: 1px solid green;
-    margin-bottom: 3em;
-    h2 {
-      @extend %txt--heading;
-      color: cc(alttxt, .35);
-    }
-    ul li {
-      margin: .4em 0;
-      @include fluid-type(18px, 22px);
-      text-transform: uppercase;
-      letter-spacing: -.9px;
     }
   }
 }

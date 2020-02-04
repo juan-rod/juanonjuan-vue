@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AdminPage from '@/components/AdminPage'
+import AdminPage from '@/components/admin/AdminPage'
 import { mapState } from 'vuex'
 export default {
   components: { AdminPage },

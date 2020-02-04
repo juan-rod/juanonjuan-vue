@@ -1,0 +1,14 @@
+.resource-list {
+  // border: 1px solid green;
+  margin-bottom: 3em;
+  h2 {
+    @extend %txt--heading;
+    color: cc(alttxt, .35);
+  }
+  ul li {
+    margin: .4em 0;
+    @include fluid-type(18px, 22px);
+    text-transform: uppercase;
+    letter-spacing: -.9px;
+  }
+}

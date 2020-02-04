@@ -1,24 +1,22 @@
 <template>
   <div class="main-container">
-    <header>
-      <h1>juan<span>on</span>one</h1>
-      <p>List of resources to accompany the Intro to Web course at <a href="https://austincodingacademy.com/" target="_blank">Austin Coding Academy</a></p>
-    </header>
-    <main>
-      <resource-list />
-    </main>
+    <header-component />
+    <resource-list />
+    <footer-component />
   </div>
 </template>
 
 <script>
 import ResourceList from '@/components/ResourceList'
+import HeaderComponent from '@/components/home/HeaderComponent'
+import FooterComponent from '@/components/home/FooterComponent'
 import { Action } from '@/store/resource/types'
 export default {
-  name: 'HomeBody',
+  name: 'home-component',
   beforeCreate () {
     this.$store.dispatch(`resource/${Action.GET_RESOURCES}`)
   },
-  components: { ResourceList }
+  components: { ResourceList, HeaderComponent, FooterComponent }
 }
 </script>
 

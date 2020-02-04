@@ -1,24 +1,37 @@
 <template>
   <div class="home">
-    <filter-panel />
-    <HomeBody />
-    <!-- <footer>
-      <p><a href="https://www.linkedin.com/in/juanrod1/" target="_blank">Juan Rodriguez</a> is a software developer at L7 Informatics and instructor at Austin Coding Academy.</p>
-      <p>2020</p>
-    </footer> -->
+    <i class="fa fa-filter" :class="{ 'active' : isFilterActive }" @click="togglePanelNav"></i>
+    <transition name="v--slide">
+      <filter-panel v-if="panelNav"/>
+    </transition>
+    <transition name="v--home-slide">
+      <home-page/>
+    </transition>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HomeBody from '@/components/HomeBody.vue'
-import FilterPanel from '@/components/FilterPanel.vue'
+import HomePage from '@/components/HomePage.vue'
+import FilterPanel from '@/components/Filter.vue'
 
 export default {
   name: 'home',
   components: {
-    HomeBody,
+    HomePage,
     FilterPanel
+  },
+  data () {
+    return {
+      panelNav: false,
+      isFilterActive: false
+    }
+  },
+  methods: {
+    togglePanelNav () {
+      this.panelNav = !this.panelNav
+      this.isFilterActive = !this.isFilterActive
+    }
   }
 }
 </script>
+

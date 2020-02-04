@@ -11,12 +11,7 @@ function getMenuItems (commit, doc) {
       })
     })
 }
-function setResourceTags (commit, getters, doc) {
-  // let rTags = getters.resourceTags
-  // rTags = Array.from(new Set(rTags))
-
-  // let flattened = tags.reduce(flattenTagsList, [])
-  // console.log('flattened', flattened)
+function setResourceTags (commit, doc) {
   commit(`${[Mutation.SET_RESOURCE_TAGS]}`, doc.tags)
 }
 
@@ -31,13 +26,13 @@ export default {
     commit(`${[Mutation.SET_NEW_RESOURCE]}`, resource)
     dispatch(`${Action.GET_RESOURCES}`)
   },
-  async [Action.GET_RESOURCES] ({commit, getters}) {
+  async [Action.GET_RESOURCES] ({commit}) {
     ResourcesCollection
       .get()
       .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         commit(`${[Mutation.SET_NEW_RESOURCE]}`, doc.data())
-        setResourceTags (commit, getters, doc.data())
+        setResourceTags (commit, doc.data())
       })
     })
   },
@@ -45,9 +40,14 @@ export default {
     ResourcesCollection.where("tags", "==", resourceBy)
       .get()
       .then((querySnapshot) => {
-        // commit(`${[Mutation.RESET_MENU_ITEMS]}`)
         querySnapshot.forEach((doc) => getMenuItems(commit, doc))
       })
       .catch((error) => console.log("Error getting documents: ", error))
+  },
+  async [Action.FILTER_RESOURCES_BY_TAGS] ({commit}, payload) {
+    commit(`${[Mutation.SET_FILTER_BY_TAG]}`, payload)
+  },
+  async [Action.FILTER_RESOURCES_BY_SEARCH] ({commit}, payload) {
+    commit(`${[Mutation.SET_FILTER_BY_SEARCH]}`, payload)
   },
 }

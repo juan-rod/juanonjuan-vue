@@ -19,18 +19,31 @@
 
     &-leave,
     &-enter-to { opacity: 1 }
-  } 
+  }
+  
+  // sidebar slide in
   &--slide{
     &-enter-active,
-    &-leave-active { transition: all 1s cb(out); }
-    &-enter{ transform: translate(0, 100%);
-    background:red;}
-    &-leave-to {  transform: translate(0, -250%); }
+    &-leave-active {
+      transition: all 500ms cb(out);
+    }
+    &-enter,
+    &-leave-to {
+      width: 0;
+      transform: translate(-100%, 0);
+      transition: all 350ms ease-in 0s;
+    }
   }
-  &--slate{
+  // home container slide away from sidebar
+  &--home-slide{
     &-enter-active,
-    &-leave-active { transition: all 1s cb(out); }
-    &-enter{ transform: translateZ( -50px) rotateY( -25deg);}
-    &-leave-to {  transform: translateZ( -50px) rotateY( 0deg); }
+    &-leave-active {
+      transition: all 800ms cb(out);
+    }
+    &-enter,
+    &-leave-to {
+      transform: translate(0, 0);
+      transition: all 450ms ease-in 0s;
+    }
   }
 }

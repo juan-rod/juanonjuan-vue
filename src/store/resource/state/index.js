@@ -1,6 +1,10 @@
 export default {
   resources: [],
-  resourcesBy: null,
+  filteredResources: [],
+  filterResourcesBy: {
+    tags: [],
+    search: ''
+  },
   resourceTags: [],
   error: null
 }

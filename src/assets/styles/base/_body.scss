@@ -1,12 +1,17 @@
-// @import url('../../fonts/line-awesome/css/line-awesome-font-awesome.min.css');
-// <link rel="stylesheet" href="path/to/line-awesome/css/line-awesome-font-awesome.min.css">
 body {
   @extend %txt--body;
-  color: cc(alttxt) ;
-  background-color: cc(bg) ;
+  color: cc(alttxt);
+  background-color: cc(bg);
   padding: 1.3em;
   height: 100vh;
-  // @include flexColumnCenter;
+  display: flex;
+  justify-content: center;
+  #app {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+  }
+  
   a {
     color: cc(alttxt);
     transition: color 500ms cb();

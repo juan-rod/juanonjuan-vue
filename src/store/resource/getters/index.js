@@ -1,5 +1,6 @@
 export default {
   resources: state => state.resources,
-  resourcesBy: state => state.resourcesBy,
+  filteredResources: state => state.filteredResources,
+  filterResourcesBy: state => state.filterResourcesBy,
   resourceTags: state => state.resourceTags.flat()
 }
