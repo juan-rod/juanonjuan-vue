@@ -1,5 +1,5 @@
 import { Mutation } from "../types";
-import * as Filters from '@/utils/Filters'
+// import * as Filters from '@/utils/Filters'
 
 export default {
   [Mutation.SET_NEW_RESOURCE](state, payload) {
@@ -9,8 +9,10 @@ export default {
     // console.log('SET_RESOURCE_TAGS payload', state.resourceTags, payload)
     state.resourceTags.push(payload)
   },
-  [Mutation.SET_FILTERED_RESOURCES](state) {
-    const resources = [...state.resources]
+  [Mutation.SET_FILTERED_RESOURCES](state, resources) {
+    // const resources = [...state.resources]
+    // const resources = [...state.resources]
+    console.log('[Mutation.SET_FILTERED_RESOURCES]: state', state)
     console.log('[Mutation.SET_FILTERED_RESOURCES]: resources', resources)
     state.filteredResources = resources
   },
@@ -22,14 +24,14 @@ export default {
     console.log('[Mutation.SET_FILTER_BY_SEARCH]', searchQuery)
     state.filterResourcesBy.search = searchQuery
   },
-  [Mutation.FILTERED_RESOURCES](state) {
-    const resources = [...state.resources]
-    console.log('[Mutation.FILTERED_RESOURCES]: resources', resources)
-    console.log('[Mutation.FILTERED_RESOURCES]: state.filteredResources', state.filteredResources)
-    state.filteredResources = resources
-    let testFilters = Filters.filterResources(state.filterResourcesBy, resources)
-    console.log('testFilters', testFilters)
-    state.filteredResources = testFilters
+  async [Mutation.FILTERED_RESOURCES](state, payload) {
+    // const resources = [...state.resources]
+    // console.log('[Mutation.FILTERED_RESOURCES]: resources', resources)
+    // console.log('[Mutation.FILTERED_RESOURCES]: state.filteredResources', state.filteredResources)
+    // state.filteredResources = resources
+    // let testFilters = await Filters.filterResources(state.filterResourcesBy, resources)
+    // console.log('testFilters', testFilters)
+    state.filteredResources = payload
   },
   [Mutation.SET_ERROR](state, payload) {
     state.error = payload

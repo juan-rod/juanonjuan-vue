@@ -9,7 +9,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Mutation } from '@/store/resource/types'
+import { Mutation, Action } from '@/store/resource/types'
 export default {
   name: 'tags-component',
   data () {
@@ -20,7 +20,7 @@ export default {
     // this.setFilterResources
   },
   computed: {
-    ...mapGetters('resource',['resourceTags']),
+    ...mapGetters('resource',['resourceTags', 'filteredResources']),
     tagItems () {
       return Array.from(new Set(this.resourceTags))
     },
@@ -39,10 +39,10 @@ export default {
       acc[tag] = (acc[tag] || []).concat(tag)
       return acc
     },
-    filterByTag (tag) {
+    async filterByTag (tag) {
       console.log('filterByTag', tag)
       this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, tag)
-      this.$store.commit(`resource/${Mutation.FILTERED_RESOURCES}`)
+      await this.$store.dispatch(`resource/${Action.GET_FILTERED_RESOURCES}`)
     }
   }
 }
