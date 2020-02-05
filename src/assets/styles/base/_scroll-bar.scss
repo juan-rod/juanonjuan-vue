@@ -1,0 +1,11 @@
+
+
+.main-container {
+  @include scrollbars(.4em, 1px, cc(alttxt, .4), transparent);
+  &::-webkit-scrollbar-thumb {
+    border-bottom-width: 0px;
+    border-bottom-color: transparent;
+    border-top-width: 0px;
+    border-top-color: transparent;
+  }
+}

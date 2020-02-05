@@ -6,7 +6,7 @@
     color: cc(alttxt, .35);
   }
   ul li {
-    margin: .4em 0;
+    margin: 0 0 .6em;
     @include fluid-type(42px, 52px);
     text-transform: uppercase;
     letter-spacing: -.9px;

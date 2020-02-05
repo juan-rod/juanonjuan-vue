@@ -2,7 +2,7 @@ body {
   @extend %txt--body;
   color: cc(alttxt);
   background-color: cc(bg);
-  padding: 1.3em;
+  padding: 0 1.3em 1.3em;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,6 +10,7 @@ body {
     max-width: 1200px;
     width: 100%;
     height: 100%;
+    position: relative;
   }
   
   a {

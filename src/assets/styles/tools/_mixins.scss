@@ -69,3 +69,33 @@
 @mixin dramaShadow2{
 	box-shadow: 17px 17px 0px 0 rgba(0, 0, 0, 0.08);
 }
+
+@mixin scrollbars($size, $border-size, $border-color, $foreground-color, $background-color:$foreground-color) {
+  // Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border: $border-size solid $border-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    background-clip: content-box;
+  }
+
+  // Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+
+  // Firefox
+   & {
+    scrollbar-width: $size;
+    scrollbar-color: $foreground-color $background-color;
+   }
+}
