@@ -1,0 +1,60 @@
+$nav-height: 48px;
+nav {
+  @include flexRow;
+  justify-content: space-between;
+  align-items: center;
+  height: $nav-height;
+  header {
+    cursor: default;
+    position: relative;
+    flex: 1;
+    a {
+      &:hover p span {
+        color: cc(alttxt);
+      }
+    }
+    p {
+      @extend %txt--title;
+      margin-bottom: 0.2em;
+      position: relative;
+      &:nth-of-type(1) {
+        @include fluid-type(24px, 32px);
+        span{
+          color: cc(hover);
+          filter: saturate(.8);
+          transition: color 500ms cb();
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: cc(bg);
+          filter: opacity(0.6);
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          transition: filter 350ms cb();
+        }
+        &:hover {
+          &:after{
+            filter: opacity(0);
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        @include fluid-type(10px, 12px);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        a {
+          &:hover {
+            color: cc(hover);
+          }
+        }
+      }
+    }
+  }
+  .nav-links {
+    // border: 1px solid pink;
+  }
+}

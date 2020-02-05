@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <header-component />
+    <!-- <header-component /> -->
     <resource-list />
     <footer-component />
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 import ResourceList from '@/components/ResourceList'
-import HeaderComponent from '@/components/home/HeaderComponent'
+// import HeaderComponent from '@/components/home/HeaderComponent'
 import FooterComponent from '@/components/home/FooterComponent'
 import { Action } from '@/store/resource/types'
 export default {
@@ -16,7 +16,7 @@ export default {
   beforeCreate () {
     this.$store.dispatch(`resource/${Action.GET_RESOURCES}`)
   },
-  components: { ResourceList, HeaderComponent, FooterComponent }
+  components: { ResourceList, FooterComponent }
 }
 </script>
 
