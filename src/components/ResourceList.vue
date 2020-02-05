@@ -2,7 +2,7 @@
   <section class="resource-list">
     <ul>
       <li class="resource-list-item" v-for="(item, index) in filteredResources" :key="index">
-        <a :href="item.link">{{item.title}}</a>
+        <a :href="item.link" target="_blank">{{item.title}}</a>
       </li>
     </ul>
   </section>

@@ -17,6 +17,7 @@ export default {
   name: 'tags-component',
   data () {
     return {
+      tagSelected: false
     }
   },
   computed: {
@@ -37,6 +38,7 @@ export default {
       return acc
     },
     async filterByTag (tag) {
+      this.tagSelected = true
       this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, tag)
     }
   }

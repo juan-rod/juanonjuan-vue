@@ -12,7 +12,6 @@ export default {
     state.filterResourcesBy.tag = tag
   },
   [Mutation.SET_FILTER_BY_SEARCH](state, searchQuery) {
-    console.log('[Mutation.SET_FILTER_BY_SEARCH]', searchQuery)
     state.filterResourcesBy.search = searchQuery
   },
   [Mutation.SET_ERROR](state, payload) {

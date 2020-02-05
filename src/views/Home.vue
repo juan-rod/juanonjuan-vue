@@ -5,7 +5,7 @@
       <filter-panel v-show="panelNav"/>
     </transition>
     <transition name="v--home-slide">
-      <home-page/>
+      <home-page ref="mainContainer"/>
     </transition>
   </div>
 </template>
