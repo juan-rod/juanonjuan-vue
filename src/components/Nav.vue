@@ -2,8 +2,9 @@
   <nav id="nav">
     <header-component />
     <div class="nav-links">
-     |
-      <router-link to="/terminal-tips">Terminal Tips</router-link>
+      <router-link to="/terminal-tips">
+        <p>Terminal Tips</p>
+      </router-link>
     </div>
   </nav>
 </template>
