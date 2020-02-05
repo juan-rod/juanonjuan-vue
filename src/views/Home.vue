@@ -2,7 +2,7 @@
   <div class="home">
     <i class="fa fa-filter" :class="{ 'active' : isFilterActive }" @click="togglePanelNav"></i>
     <transition name="v--slide">
-      <filter-panel v-if="panelNav"/>
+      <filter-panel v-show="panelNav"/>
     </transition>
     <transition name="v--home-slide">
       <home-page/>

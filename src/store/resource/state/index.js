@@ -1,9 +1,8 @@
 export default {
   resources: [],
-  filteredResources: [],
   filterResourcesBy: {
-    tags: [],
-    search: ''
+    tag: null,
+    search: null
   },
   resourceTags: [],
   error: null

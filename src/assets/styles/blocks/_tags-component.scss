@@ -1,8 +1,17 @@
 .tags-container {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   .tag-item {
-    border: 1px solid pink;
-    padding: 1em;
+    padding: .5em;
+    border: none;
+    &:hover {
+      margin: -2px;
+      border: 2px solid $a-nother-red;
+      cursor: pointer;
+    }
   }
 }

@@ -58,11 +58,17 @@
   header {
     // border: 1px solid blue;
     margin-bottom: 2em;
+    cursor: default;
     h1 {
       @extend %txt--title;
       margin-bottom: 0.2em;
       span{
         color: cc(hover);
+        filter: saturate(.8);
+        &:hover {
+          filter: saturate(1);
+          
+        }
       }
     }
     p {

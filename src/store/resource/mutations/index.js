@@ -6,32 +6,14 @@ export default {
     state.resources.push(payload)
   },
   [Mutation.SET_RESOURCE_TAGS](state, payload) {
-    // console.log('SET_RESOURCE_TAGS payload', state.resourceTags, payload)
     state.resourceTags.push(payload)
   },
-  [Mutation.SET_FILTERED_RESOURCES](state, resources) {
-    // const resources = [...state.resources]
-    // const resources = [...state.resources]
-    console.log('[Mutation.SET_FILTERED_RESOURCES]: state', state)
-    console.log('[Mutation.SET_FILTERED_RESOURCES]: resources', resources)
-    state.filteredResources = resources
-  },
   [Mutation.SET_FILTER_BY_TAG](state, tag) {
-    console.log('[Mutation.SET_FILTER_BY_TAG]', tag)
-    state.filterResourcesBy.tags.push(tag)
+    state.filterResourcesBy.tag = tag
   },
   [Mutation.SET_FILTER_BY_SEARCH](state, searchQuery) {
     console.log('[Mutation.SET_FILTER_BY_SEARCH]', searchQuery)
     state.filterResourcesBy.search = searchQuery
-  },
-  async [Mutation.FILTERED_RESOURCES](state, payload) {
-    // const resources = [...state.resources]
-    // console.log('[Mutation.FILTERED_RESOURCES]: resources', resources)
-    // console.log('[Mutation.FILTERED_RESOURCES]: state.filteredResources', state.filteredResources)
-    // state.filteredResources = resources
-    // let testFilters = await Filters.filterResources(state.filterResourcesBy, resources)
-    // console.log('testFilters', testFilters)
-    state.filteredResources = payload
   },
   [Mutation.SET_ERROR](state, payload) {
     state.error = payload

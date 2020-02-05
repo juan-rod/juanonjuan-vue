@@ -1,5 +1,8 @@
 <template>
   <div class="tags-container">
+    <div class="tag-item" @click="filterByTag('all')">
+      <p>all</p>
+    </div>
     <div class="tag-item" v-for="(tag, index) in tagItems" @click="filterByTag(tag)" :key="index">
       <p>{{ tag }}</p>
       <!-- <span> {{getTagSize(tag)}}</span> -->
@@ -9,18 +12,15 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Mutation, Action } from '@/store/resource/types'
+import { Mutation } from '@/store/resource/types'
 export default {
   name: 'tags-component',
   data () {
     return {
     }
   },
-  mounted () {
-    // this.setFilterResources
-  },
   computed: {
-    ...mapGetters('resource',['resourceTags', 'filteredResources']),
+    ...mapGetters('resource',['resourceTags']),
     tagItems () {
       return Array.from(new Set(this.resourceTags))
     },
@@ -29,9 +29,6 @@ export default {
     }
   },
   methods: {
-    setFilterResources () {
-      this.$store.commit(`resource/${Mutation.SET_FILTERED_RESOURCES}`)
-    },
     getTagSize (tag) {
       return this.tagSize[tag].length
     },
@@ -40,9 +37,7 @@ export default {
       return acc
     },
     async filterByTag (tag) {
-      console.log('filterByTag', tag)
       this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, tag)
-      await this.$store.dispatch(`resource/${Action.GET_FILTERED_RESOURCES}`)
     }
   }
 }
