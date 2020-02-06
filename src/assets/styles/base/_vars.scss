@@ -1,2 +1,3 @@
 $nav-height: 80px;
 $nav-margin-top: 1.3em;
+$nav-height-total: calc(100% - (#{$nav-height} + (#{$nav-margin-top} * 2)))

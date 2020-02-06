@@ -21,8 +21,7 @@
 </template>
 
 <script>
-// import resourceData from '@/store/data/resources.json'
-import { Action } from '@/store/resource/types'
+// import { Action } from '@/store/resource/types'
 export default {
   name: 'admin-page',
   data () {
@@ -32,25 +31,12 @@ export default {
   },
   methods: {
     async createResource () {
-      // console.log('resourceData[resources]', resourceData['resources'][0])
-      // resourceData['resources'].forEach(item => {
-        this.$store.dispatch(`resource/${Action.CREATE_NEW_RESOURCE}`, this.newResource)
-      // })
+        // this.$store.dispatch(`resource/${Action.CREATE_NEW_RESOURCE}`, this.newResource)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.admin-page {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  button {
-    border: 2px solid pink;
-  }
-}
+
 </style>

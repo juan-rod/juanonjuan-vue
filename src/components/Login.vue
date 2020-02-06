@@ -1,8 +1,10 @@
 <template>
-  <div class="login-form">
-    <input type="email" name="email" v-model="email" label="Your email" placeholder="YOUR EMAIL">
-    <input type="password" name="password" label="Your password" placeholder="YOUR PASSWORD" v-model="password">
-    <button @click="login">Login</button>
+  <div class="login-container">
+    <div class="login-form">
+      <input type="email" name="email" v-model="email" label="Your email" placeholder="YOUR EMAIL">
+      <input type="password" name="password" label="Your password" placeholder="YOUR PASSWORD" v-model="password">
+      <button @click="login">Login</button>
+    </div>
   </div>
 </template>
 
@@ -36,9 +38,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.login-form {
-  background: #eee;
-  padding: 20px;
-}
 
 </style>
