@@ -1,9 +1,11 @@
 <template>
   <div class="tags-container">
-    <div class="tag-item" @click="filterByTag('all')">
-      <p>all</p>
-    </div>
-    <div class="tag-item" v-for="(tag, index) in tagItems" @click="filterByTag(tag)" :key="index">
+    <div class="tag-item"
+      v-for="(tag, index) in tagItems"
+      @click="filterByTag(tag, index)"
+      :class="{ 'tag-selected': index === selected }"
+      :key="index"
+    >
       <p>{{ tag }}</p>
       <!-- <span> {{getTagSize(tag)}}</span> -->
     </div>
@@ -17,13 +19,13 @@ export default {
   name: 'tags-component',
   data () {
     return {
-      tagSelected: false
+      selected: null
     }
   },
   computed: {
     ...mapGetters('resource',['resourceTags']),
     tagItems () {
-      return Array.from(new Set(this.resourceTags))
+      return Array.from(new Set(['all', ...this.resourceTags]))
     },
     tagSize () {
       return this.resourceTags.reduce(this.groupByAsc, [])
@@ -37,14 +39,14 @@ export default {
       acc[tag] = (acc[tag] || []).concat(tag)
       return acc
     },
-    async filterByTag (tag) {
-      this.tagSelected = true
+    async filterByTag (tag, index) {
+      this.selected = index
       this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, tag)
     }
   }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 
 </style>

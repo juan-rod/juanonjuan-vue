@@ -23,12 +23,22 @@ export default {
   data () {
     return {
       panelNav: false,
-      isFilterActive: false
+      isFilterActive: false,
+      transitionHome: false
     }
   },
   methods: {
+    removeMarginLeftMobile () {
+      console.log('this.panelNav', this.panelNav)
+      let isPanelOpen = this.panelNav ? '0px' : '2.5em'
+      console.log('isPanelOpen', isPanelOpen)
+      document.querySelector('.main-container').style.marginLeft = isPanelOpen
+    },
     togglePanelNav () {
+      // if (this.panelNav) {
+        // }
       this.panelNav = !this.panelNav
+      // this.removeMarginLeftMobile()
       this.isFilterActive = !this.isFilterActive
     }
   }

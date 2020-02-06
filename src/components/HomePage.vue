@@ -2,21 +2,27 @@
   <div class="main-container">
     <!-- <header-component /> -->
     <resource-list />
-    <footer-component />
+    <!-- <footer-component /> -->
   </div>
 </template>
 
 <script>
 import ResourceList from '@/components/ResourceList'
-// import HeaderComponent from '@/components/home/HeaderComponent'
-import FooterComponent from '@/components/home/FooterComponent'
-import { Action } from '@/store/resource/types'
+// import FooterComponent from '@/components/home/FooterComponent'
+import { Action, Mutation } from '@/store/resource/types'
+import { mapGetters } from 'vuex'
 export default {
   name: 'home-component',
-  beforeCreate () {
-    this.$store.dispatch(`resource/${Action.GET_RESOURCES}`)
+  mounted () {
+    // only call db if not in state
+    if (this.resources.length < 1) { this.$store.dispatch(`resource/${Action.GET_RESOURCES}`)}
+    //reset tag filter when returning to home page
+    this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, '')
   },
-  components: { ResourceList, FooterComponent }
+  components: { ResourceList },
+  computed: {
+    ...mapGetters('resource',['resources', 'filterResourcesBy']),
+  }
 }
 </script>
 

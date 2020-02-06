@@ -11,7 +11,8 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  const requireAuth = to.matched.some(record => record.meta.requiresAuth)
+  if (requireAuth) {
       if (Auth.currentUser) {
           next()
           return

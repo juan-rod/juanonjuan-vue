@@ -1,7 +1,7 @@
 
 
 .main-container {
-  @include scrollbars(.4em, 1px, cc(alttxt, .4), transparent);
+  @include scrollbars(0, 1px, cc(alttxt, .4), transparent);
   &::-webkit-scrollbar-thumb {
     border-bottom-width: 0px;
     border-bottom-color: transparent;

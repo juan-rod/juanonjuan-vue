@@ -4,6 +4,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: $nav-height;
+  margin: $nav-margin-top 0;
+  position: absolute;
+  width: 100%;
   header {
     cursor: default;
     position: relative;

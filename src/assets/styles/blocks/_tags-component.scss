@@ -8,11 +8,11 @@
   .tag-item {
     padding: .5em;
     border: none;
-    // &.tag-selected {
-    //   border: 2px solid $a-nother-red;
-    // }
-    &:active {
+    &.tag-selected {
       border: 2px solid $a-nother-red;
+      &:hover {
+        margin: 0;
+      }
     }
     &:hover {
       margin: -2px;
