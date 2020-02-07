@@ -1,6 +1,7 @@
 <template>
   <div class="main-container">
     <!-- <header-component /> -->
+    <div class="main-container-mask"></div>
     <resource-list />
     <!-- <footer-component /> -->
   </div>
