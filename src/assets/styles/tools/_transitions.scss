@@ -46,4 +46,61 @@
       transition: all 450ms ease-in 0s;
     }
   }
+  @keyframes fadeInLeft {
+    from {
+      transform: translate3d(-200px, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1
+    }
+  }
+  
+  &--fade-in-left-leave-to {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  &--fade-in-left-enter {
+    opacity: 0;
+    transform: translate3d(-170px, 0, 0);
+    transition: opacity 800s ease-in-out;
+  }
+  
+  &--fade-in-left-enter-to {
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+    animation-delay: 500ms;
+  }
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      // transform: translate3d(170px, 0, 0);
+    }
+  
+    to {
+      // transform: translate3d(0, 0, 0);
+      opacity: 1
+    }
+  }
+  &--fade-opacity {
+    &-leave-to {
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    &-enter {
+      opacity: 0;
+      transition: opacity 800s ease-in-out;
+    }
+    &-enter-to {
+      opacity: 0;
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-name: fadeInRight;
+      animation-delay: 500ms;
+    }
+  }
 }

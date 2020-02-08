@@ -4,6 +4,9 @@
     @extend %txt--heading;
     color: cc(alttxt, .35);
   }
+  ul {
+    backface-visibility: hidden;
+  }
   ul li {
     margin: 0 0 .6em;
     @include fluid-type(42px, 52px);

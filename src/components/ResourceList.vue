@@ -1,13 +1,14 @@
 <template>
   <section class="resource-list">
-    <ul>
-      <li class="resource-list-item" v-for="(item, index) in filteredResources" :key="index">
+    <transition-group name="company" tag="ul" class="content__list" appear>
+      <li class="resource-list-item company" v-for="(item) in filteredResources" :key="item.id">
         <a :href="item.link" target="_blank">{{item.title}}</a>
       </li>
-    </ul>
+    </transition-group>
   </section>
 </template>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 <script>
 import { mapGetters } from 'vuex'
 export default {
@@ -39,6 +40,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.company {
+  &-move { transition: all 600ms ease-in-out 50ms }
+  &-enter-active { transition: all 800ms ease-out }
 
+  &-leave-active {
+    transition: all 350ms ease-in;
+    position: absolute;
+    z-index: 0;
+  }
+
+  &-enter,
+  &-leave-to { opacity: 0 }
+  &-enter { transform: scale(0.9) }
+}
 </style>

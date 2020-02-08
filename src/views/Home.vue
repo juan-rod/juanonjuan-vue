@@ -1,10 +1,12 @@
 <template>
   <div class="home">
+    <transition name="v----fade-in-left" appear>
     <i class="fa fa-filter" :class="{ 'active' : isFilterActive }" @click="togglePanelNav"></i>
-    <transition name="v--slide">
+    </transition>
+    <transition name="v--slide" mode="out-in">
       <filter-panel v-show="panelNav"/>
     </transition>
-    <transition name="v--home-slide">
+    <transition name="v--home-slide" mode="in-out">
       <home-page ref="mainContainer"/>
     </transition>
   </div>

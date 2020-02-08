@@ -23,8 +23,9 @@ export default {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          commit(`${[Mutation.SET_NEW_RESOURCE]}`, doc.data())
-          setResourceTags(commit, doc.data())
+          const data = { ...doc.data(), id: doc.id }
+          commit(`${[Mutation.SET_NEW_RESOURCE]}`, data)
+          setResourceTags(commit, data)
         })
       })
   }

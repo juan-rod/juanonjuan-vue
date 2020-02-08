@@ -1,7 +1,6 @@
 <template>
   <header>
     <router-link to="/"><p>juan<span>on</span>one</p></router-link>
-    <!-- <p>juan<span>on</span>one</p> -->
     <!-- <p>List of resources to accompany the Intro to Web course at <a href="https://austincodingacademy.com/" target="_blank">Austin Coding Academy</a></p> -->
   </header>
 </template>
