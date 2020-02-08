@@ -23,7 +23,13 @@ const routes = [
     path: '/terminal-tips',
     name: 'terminal-tips',
     component: () => import(/* webpackChunkName: "terminal-tips" */ '@/views/TerminalTips.vue')
-  }
+  },
+  {
+    path: '/wireframes',
+    name: 'wireframes',
+    component: () => import(/* webpackChunkName: "wireframes" */ '@/views/Wireframes.vue')
+  },
+
 ]
 
 export default routes
