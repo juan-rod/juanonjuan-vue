@@ -1,0 +1,36 @@
+$card-path : polygon(86% 0, 100% 12%, 100% 100%, 0 100%, 0 0);
+.card {
+  border: 1px solid cc(ghost);
+  height: 400px;
+  width: 250px;
+  background: white;
+  height: 120px;
+  width: 116px;
+  clip-path: $card-path;
+  &-container {
+    background-color: cc(bg);
+    height: 100%;
+    width: 100%;
+    clip-path: $card-path;
+    @include flexColumnCenter;
+    padding: .8em;
+    transition: all 500ms cb();
+    &:hover {
+      cursor: pointer;
+      background-color: cc(ghost);
+      color: cc(bg);
+      transform: translateY(-1px);
+    }
+  }
+  &-header {
+    flex: 1;
+    width: 100%;
+    @extend %txt--title;
+    text-transform: uppercase;
+    font-size: 1.4em;
+  }
+  &-body {
+    flex: 1;
+    width: 100%;
+  }
+}

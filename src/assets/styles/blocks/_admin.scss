@@ -1,28 +1,81 @@
+$card-path : polygon(86% 0, 100% 12%, 100% 100%, 0 100%, 0 0);
 .admin {
-  &-page {
-    height: 100vh;
-    width: 100%;
-    @include flexColumnCenter;
-    &--form {
-      @include formDesign;
-      .form-group {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        input {
-          margin: .5em 0;
-        }
-      }
+  // border: 2px solid cc(ghost);
+  background-color: cc(bg);
+  height: 100%;
+  @include flexRow;
+  padding-top: 80px;
+  &-sidebar {
+    padding: 1em;
+    .card {
+      margin-bottom: 1em;
     }
   }
-}
-.admin-page {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  &-view {
+    height: 100%;
+    width: 100%;
+    padding: 2px;
+    @include flexColumnCenter;
+    clip-path: $card-path;
+    background-color: cc(ghost);
+    .admin {
+      &-add, &-edit, &-remove {
+        background-color: cc(bg);
+        width: 100%;
+        height: 100%;
+        clip-path: $card-path;
+      }
+      &-add {
+        @include flexColumnCenter;
+        padding: calc(1em - 2px);
+        &--form {
+          height: 100%;
+          // width: 100%;
+          width: 70%;
+          background: cc(ghost);
+          padding: 1em;
+          .form-group {
+            border: 2px solid cc(bg);
+            height: 60px;
+            @include flexRow;
+            margin-bottom: 1em;
+            label, input {
+              border: 2px solid cc(bg);
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding-left: 1em;
+              font-size: 2em;
+              color: cc(bg);
+              text-transform: uppercase;
+            }
+            input {
+              flex: 2;
+            }
+          }
+          // @include formDesign;
+        }
+      }
+      &-edit {
+        border: 1px solid red;
+      }
+      &-remove {
+        border: 1px solid red;
+      }
+    }
+    // &--form {
+    //   @include formDesign;
+    //   .form-group {
+    //     width: 100%;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+    //     align-items: flex-start;
+    //     input {
+    //       margin: .5em 0;
+    //     }
+    //   }
+    // }
+  }
 }

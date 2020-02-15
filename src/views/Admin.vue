@@ -1,17 +1,26 @@
 <template>
   <div class="admin">
-    <admin-page />
+    <div class="admin-sidebar">
+      <card-component v-for="item in crud" :key="item" @click.native="selectTask(item)"> 
+        <template #headerTitle> {{ item }} </template>
+        <template #headerBody> {{ item }} resources </template>
+      </card-component>
+    </div>
+    <admin-view :adminComponent="selectedComponent" />
   </div>
 </template>
 
 <script>
-import AdminPage from '@/components/admin/AdminPage'
+import AdminView from '@/components/admin/AdminView'
+import CardComponent from '@/components/CardComponent'
 import { mapState } from 'vuex'
 export default {
-  components: { AdminPage },
+  components: { AdminView, CardComponent },
   data () {
     return {
-      loggedIn: false
+      loggedIn: false,
+      crud : ['add', 'edit', 'remove'],
+      selectedComponent: 'add-resource'
     }
   },
   computed : {
@@ -20,8 +29,8 @@ export default {
     })
   },
   methods: {
-    userLoggedIn () {
-
+    selectTask (task) {
+      this.selectedComponent = `${task}-resource`
     }
   }
 }
