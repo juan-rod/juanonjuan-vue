@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar></nav-bar>
+    <nav-bar v-if="isHome"></nav-bar>
     <router-view/>
   </div>
 </template>
@@ -11,6 +11,21 @@ export default {
   name: 'home',
   components: {
     NavBar
+  },
+  data () {
+    return {
+      isHome: true
+    }
+  },
+  watch: {
+    $route (to) {
+      this.isHome = to.name === 'wireframes' ? !this.isHome : this.isHome
+    }
+  },
+  beforeMount () {
+    const routerName = this.$router.currentRoute.name
+    this.isHome = (routerName === 'wireframes') ? !this.isHome : this.isHome
+  
   }
 }
 </script>
