@@ -35,12 +35,14 @@ $card-path : polygon(86% 0, 100% 12%, 100% 100%, 0 100%, 0 0);
           background: cc(ghost);
           padding: 1em;
           .form-group {
-            border: 2px solid cc(bg);
+            border: 4px solid cc(bg);
             height: 60px;
             @include flexRow;
             margin-bottom: 1em;
+            label {
+              border-right: 4px solid cc(bg);
+            }
             label, input {
-              border: 2px solid cc(bg);
               flex: 1;
               display: flex;
               flex-direction: column;
@@ -53,29 +55,39 @@ $card-path : polygon(86% 0, 100% 12%, 100% 100%, 0 100%, 0 0);
             input {
               flex: 2;
             }
+            &.tags-container {
+              height: auto;
+              color: cc(bg);
+            }
+            &.button-group {
+              border: none;
+              label {
+                border: none;
+                flex: 1;
+              }
+              button {
+                border: 4px solid cc(bg);
+                flex: 2;
+                color: cc(bg);
+                text-transform: uppercase;
+                transition: all 350ms ease-in-out;
+                &:hover {
+                  background-color: cc(bg);
+                  color: cc(ghost);
+                  transform: translateY(-1px);
+                }
+              }
+            }
           }
-          // @include formDesign;
         }
       }
       &-edit {
         border: 1px solid red;
       }
       &-remove {
-        border: 1px solid red;
+        overflow: auto;
+        padding: 20px;
       }
     }
-    // &--form {
-    //   @include formDesign;
-    //   .form-group {
-    //     width: 100%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: flex-start;
-    //     align-items: flex-start;
-    //     input {
-    //       margin: .5em 0;
-    //     }
-    //   }
-    // }
   }
 }

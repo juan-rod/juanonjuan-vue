@@ -2,6 +2,9 @@
   <section class="resource-list">
     <transition-group name="company" tag="ul" class="content__list" appear>
       <li class="resource-list-item company" v-for="(item) in filteredResources" :key="item.id">
+        <slot class="resource-list-item-checkbox" name="resourceCheckBox">
+          <input type="checkbox" name="resource-selected" id="">
+        </slot>
         <a :href="item.link" target="_blank">{{item.title}}</a>
       </li>
     </transition-group>

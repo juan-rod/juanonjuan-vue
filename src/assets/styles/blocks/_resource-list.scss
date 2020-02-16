@@ -13,4 +13,14 @@
     text-transform: uppercase;
     letter-spacing: -.9px;
   }
+  &.admin-resource {
+    ul li {
+      @include fluid-type(24px, 32px);
+      input {
+        height: 50px;
+        width: 50px;
+        border: 1px solid red;
+      }
+    }
+  }
 }

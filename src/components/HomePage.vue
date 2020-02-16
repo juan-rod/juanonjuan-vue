@@ -21,7 +21,7 @@ export default {
   },
   components: { ResourceList },
   computed: {
-    ...mapGetters('resource',['resources', 'filterResourcesBy']),
+    ...mapGetters('resource',['resources', 'filterResourcesBy'])
   }
 }
 </script>

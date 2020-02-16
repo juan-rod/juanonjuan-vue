@@ -14,9 +14,15 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Mutation } from '@/store/resource/types'
+import { Mutation, Action } from '@/store/resource/types'
 export default {
   name: 'tags-component',
+  props: {
+    admin: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       selected: null
@@ -25,6 +31,7 @@ export default {
   computed: {
     ...mapGetters('resource',['resourceTags']),
     tagItems () {
+      if (!this.resourceTags.length > 0) { this.$store.dispatch(`resource/${Action.GET_TAGS}`) }
       return Array.from(new Set(['all', ...this.resourceTags]))
     },
     tagSize () {
@@ -41,6 +48,9 @@ export default {
     },
     async filterByTag (tag, index) {
       this.selected = index
+      if (this.admin) {
+        this.$emit('selectedTag', { tag, index })
+      }
       this.$store.commit(`resource/${Mutation.SET_FILTER_BY_TAG}`, tag)
     }
   }
